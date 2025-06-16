@@ -4,21 +4,21 @@ import React from 'react';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Our payment processing efficiency increased by 40% and transaction failures dropped to near zero. The automation features are game-changing.",
+      quote: "Synapse Forge transformed our online presence completely. Our new website increased conversions by 300% and we couldn't be happier with the results.",
       author: "Sarah Johnson",
-      position: "CFO at TechCorp",
+      position: "CEO at TechStartup",
       avatar: "bg-cosmic-light/30"
     },
     {
-      quote: "The real-time analytics and fraud detection capabilities have saved us millions. We can spot issues before they become problems.",
+      quote: "The team at Synapse Forge delivered beyond our expectations. Their attention to detail and technical expertise made our complex web application a reality.",
       author: "Michael Chen",
-      position: "Head of Risk at FinanceFlow",
+      position: "CTO at InnovateNow",
       avatar: "bg-cosmic-light/20"
     },
     {
-      quote: "Compliance used to be a nightmare. Now our regulatory reporting is automated and we're always audit-ready.",
+      quote: "Working with Synapse Forge was seamless. They understood our vision perfectly and delivered a stunning e-commerce platform that our customers love.",
       author: "Leila Rodriguez",
-      position: "Operations Director at GlobalPay",
+      position: "Founder at StyleHub",
       avatar: "bg-cosmic-light/40"
     }
   ];
@@ -31,10 +31,10 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto space-y-16 relative z-10">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
-            Trusted by finance teams worldwide
+            Trusted by forward-thinking businesses
           </h2>
           <p className="text-muted-foreground text-lg">
-            See how our platform transforms financial operations for businesses
+            See how we've helped companies transform their digital presence and achieve their goals
           </p>
         </div>
         

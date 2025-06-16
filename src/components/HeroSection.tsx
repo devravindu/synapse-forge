@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import TaskBoard from './TaskBoard';
@@ -28,34 +29,34 @@ const HeroSection = () => {
         <div className="flex justify-center">
           <span className="inline-flex items-center gap-2 px-3 py-1 text-xs font-medium rounded-full bg-muted text-primary">
             <span className="flex h-2 w-2 rounded-full bg-primary"></span>
-            Launching new payment features
+            Now accepting new projects
             <Loader className="h-3 w-3 animate-spin text-primary" />
           </span>
         </div>
         
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-balance text-foreground">
-          Financial operations for <span className="text-primary">growth</span> businesses
+          Crafting digital experiences for <span className="text-primary">modern</span> businesses
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          Streamline your financial workflows with our comprehensive fintech platform. Built for modern businesses who value efficiency, compliance, and scalable growth.
+          Synapse Forge specializes in building exceptional websites and web applications. We transform your vision into powerful digital solutions that drive growth and engage your audience.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 items-center">
           <Button className="bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
-            Start for free
+            Start your project
           </Button>
           <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
-            Book a demo
+            View our work
           </Button>
         </div>
         
         <div className="pt-6 text-sm text-muted-foreground">
-          No credit card required • Free 14-day trial
+          Free consultation • 14-day project kickoff guarantee
         </div>
       </div>
       
-      {/* Task Manager UI integrated in hero section with glassmorphic effect */}
+      {/* Development Workflow UI integrated in hero section with glassmorphic effect */}
       <div className={`w-full max-w-7xl mt-12 z-10 transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
         <div className="cosmic-glow relative rounded-xl overflow-hidden border border-border backdrop-blur-sm bg-card shadow-lg">
           {/* Dashboard Header */}
@@ -65,7 +66,7 @@ const HeroSection = () => {
                 <div className="h-8 w-8 rounded-md bg-muted flex items-center justify-center">
                   <div className="h-3 w-3 rounded-sm bg-foreground"></div>
                 </div>
-                <span className="text-foreground font-medium">Payment Processing Pipeline</span>
+                <span className="text-foreground font-medium">Project Development Pipeline</span>
               </div>
               
               <div className="flex items-center gap-3">
@@ -73,7 +74,7 @@ const HeroSection = () => {
                   <div className="h-8 w-8 rounded-full bg-muted border-2 border-card"></div>
                   <div className="h-8 w-8 rounded-full bg-muted/80 border-2 border-card"></div>
                   <div className="h-8 w-8 rounded-full bg-muted/60 border-2 border-card"></div>
-                  <div className="h-8 w-8 rounded-full bg-muted/40 border-2 border-card flex items-center justify-center text-xs text-foreground">+3</div>
+                  <div className="h-8 w-8 rounded-full bg-muted/40 border-2 border-card flex items-center justify-center text-xs text-foreground">+5</div>
                 </div>
                 
                 <div className="h-8 px-3 rounded-md bg-muted flex items-center justify-center text-foreground text-sm">
@@ -87,41 +88,41 @@ const HeroSection = () => {
               {/* Sidebar */}
               <div className="w-64 border-r border-border p-4 space-y-4 hidden md:block bg-card">
                 <div className="space-y-2">
-                  <div className="text-xs text-muted-foreground uppercase">Navigation</div>
+                  <div className="text-xs text-muted-foreground uppercase">Services</div>
                   <div className="space-y-1">
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md bg-muted text-foreground">
                       <div className="h-3 w-3 rounded-sm bg-foreground"></div>
-                      <span>Payments</span>
+                      <span>Web Development</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
                       <div className="h-3 w-3 rounded-sm bg-muted-foreground/30"></div>
-                      <span>Analytics</span>
+                      <span>UI/UX Design</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
                       <div className="h-3 w-3 rounded-sm bg-muted-foreground/30"></div>
-                      <span>Compliance</span>
+                      <span>E-commerce</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
                       <div className="h-3 w-3 rounded-sm bg-muted-foreground/30"></div>
-                      <span>Reports</span>
+                      <span>Maintenance</span>
                     </div>
                   </div>
                 </div>
                 
                 <div className="space-y-2 pt-4">
-                  <div className="text-xs text-muted-foreground uppercase">Departments</div>
+                  <div className="text-xs text-muted-foreground uppercase">Technologies</div>
                   <div className="space-y-1">
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
                       <div className="h-3 w-3 rounded-full bg-muted-foreground/60"></div>
-                      <span>Treasury</span>
+                      <span>React</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
                       <div className="h-3 w-3 rounded-full bg-muted-foreground/50"></div>
-                      <span>Risk</span>
+                      <span>Next.js</span>
                     </div>
                     <div className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted/50">
                       <div className="h-3 w-3 rounded-full bg-muted-foreground/40"></div>
-                      <span>Operations</span>
+                      <span>Node.js</span>
                     </div>
                   </div>
                 </div>
@@ -132,8 +133,8 @@ const HeroSection = () => {
                 {/* Board Header */}
                 <div className="flex items-center justify-between mb-6 min-w-0">
                   <div className="flex items-center gap-2 flex-shrink-0">
-                    <h3 className="font-medium text-foreground">Transactions</h3>
-                    <span className="text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">23</span>
+                    <h3 className="font-medium text-foreground">Active Projects</h3>
+                    <span className="text-xs bg-muted px-2 py-1 rounded-full text-muted-foreground">8</span>
                   </div>
                   
                   <div className="flex items-center gap-2 flex-shrink-0">
@@ -150,7 +151,7 @@ const HeroSection = () => {
                       </svg>
                     </div>
                     <div className="h-8 px-3 rounded-md bg-foreground text-background flex items-center justify-center text-sm font-medium whitespace-nowrap">
-                      New Transaction
+                      New Project
                     </div>
                   </div>
                 </div>

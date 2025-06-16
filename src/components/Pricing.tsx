@@ -6,52 +6,56 @@ import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 const Pricing = () => {
   const plans = [
     {
-      name: "Starter",
-      price: "Free",
-      description: "Perfect for small businesses starting their fintech journey",
+      name: "Website Essentials",
+      price: "$2,500",
+      period: "starting from",
+      description: "Perfect for small businesses looking to establish their online presence",
       features: [
-        "Up to 100 transactions/month",
-        "Basic payment processing",
-        "Standard reporting",
-        "Email support",
-        "Basic fraud protection"
+        "5-page responsive website",
+        "Modern, mobile-first design",
+        "Basic SEO optimization",
+        "Contact forms integration",
+        "3 months of support",
+        "Content management system"
       ],
       buttonText: "Get Started",
       buttonVariant: "outline",
       popular: false
     },
     {
-      name: "Professional",
-      price: "$99",
-      period: "per month",
-      description: "Ideal for growing businesses with higher transaction volumes",
+      name: "Business Pro",
+      price: "$7,500",
+      period: "starting from",
+      description: "Ideal for growing businesses with more complex requirements",
       features: [
-        "Up to 10,000 transactions/month",
-        "Advanced payment processing",
-        "Real-time analytics",
-        "Multi-currency support",
-        "Advanced fraud protection",
-        "API access",
-        "Priority support"
+        "Custom web application",
+        "Advanced UI/UX design",
+        "E-commerce capabilities",
+        "Third-party integrations",
+        "Performance optimization",
+        "Analytics & reporting",
+        "6 months of support",
+        "Training & documentation"
       ],
-      buttonText: "Start 14-day trial",
+      buttonText: "Start Project",
       buttonVariant: "default",
       popular: true
     },
     {
       name: "Enterprise",
-      price: "Custom",
-      description: "For large organizations with complex financial operations",
+      price: "Custom Quote",
+      description: "For large organizations with complex digital transformation needs",
       features: [
-        "Unlimited transactions",
-        "Custom payment workflows",
-        "Advanced compliance tools",
-        "Dedicated infrastructure",
-        "White-label solutions",
-        "Dedicated account manager",
-        "24/7 premium support"
+        "Full-scale web platform",
+        "Custom integrations",
+        "Advanced security features",
+        "Scalable architecture",
+        "Multi-team collaboration",
+        "Dedicated project manager",
+        "12 months of support",
+        "Priority response time"
       ],
-      buttonText: "Contact Sales",
+      buttonText: "Contact Us",
       buttonVariant: "outline",
       popular: false
     }
@@ -62,10 +66,10 @@ const Pricing = () => {
       <div className="max-w-7xl mx-auto space-y-16">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-foreground">
-            Transparent pricing for every stage
+            Transparent pricing for every project size
           </h2>
           <p className="text-muted-foreground text-lg">
-            Scale your financial operations with plans that grow with your business
+            From simple websites to complex web applications, we have solutions that fit your budget and goals
           </p>
         </div>
         
@@ -126,7 +130,7 @@ const Pricing = () => {
         </div>
         
         <div className="text-center text-muted-foreground">
-          Have questions? <a href="#" className="text-primary hover:underline">Contact our sales team</a>
+          Have a unique project in mind? <a href="#" className="text-primary hover:underline">Let's discuss your requirements</a>
         </div>
       </div>
     </section>

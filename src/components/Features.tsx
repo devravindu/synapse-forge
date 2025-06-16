@@ -1,58 +1,58 @@
 
 import React, { useState } from 'react';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
-import { ChevronDown, Layers, Grid3x3, ListCheck, BookOpen, Star, LayoutDashboard } from "lucide-react";
+import { ChevronDown, Layout, LayoutGrid, Users, Briefcase, LayoutDashboard, BriefcaseBusiness } from "lucide-react";
 
 const Features = () => {
   const [openFeature, setOpenFeature] = useState<number | null>(null);
   
   const features = [
     {
-      title: "Payment Automation",
-      description: "Automate payment processing and reconciliation to reduce manual errors and improve efficiency.",
-      expandedDescription: "Set up automated payment workflows with custom approval chains. Schedule recurring payments, automate invoice processing, and create conditional rules for different transaction types. Reduce manual intervention and ensure compliance with financial regulations.",
+      title: "Custom Web Development",
+      description: "Tailored websites and web applications built with modern technologies and best practices.",
+      expandedDescription: "We craft custom solutions using React, Next.js, and cutting-edge frameworks. From simple landing pages to complex web applications, we build scalable, performant, and maintainable code that grows with your business needs.",
       icon: (
-        <Layers size={24} className="text-cosmic-accent" />
+        <Layout size={24} className="text-cosmic-accent" />
       )
     },
     {
-      title: "Real-time Analytics",
-      description: "Monitor financial performance with real-time dashboards and comprehensive reporting.",
-      expandedDescription: "Track key financial metrics with customizable dashboards. Monitor cash flow, payment volumes, and transaction success rates in real-time. Generate detailed reports for stakeholders and identify trends before they impact your business.",
+      title: "UI/UX Design",
+      description: "Beautiful, intuitive designs that engage users and drive conversions.",
+      expandedDescription: "Our design process focuses on user experience and conversion optimization. We create wireframes, prototypes, and pixel-perfect designs that not only look great but also provide seamless user journeys and maximize business outcomes.",
       icon: (
-        <Grid3x3 size={24} className="text-cosmic-accent" />
+        <LayoutGrid size={24} className="text-cosmic-accent" />
       )
     },
     {
-      title: "Risk Management",
-      description: "Advanced fraud detection and risk assessment tools to protect your business.",
-      expandedDescription: "Utilize machine learning algorithms to detect suspicious transactions and prevent fraud. Set up custom risk rules, monitor transaction patterns, and receive instant alerts for unusual activity. Protect your business with enterprise-grade security measures.",
+      title: "E-commerce Solutions",
+      description: "Powerful online stores that drive sales and provide exceptional shopping experiences.",
+      expandedDescription: "Build robust e-commerce platforms with secure payment processing, inventory management, and customer analytics. We integrate with popular platforms and create custom solutions that scale with your business growth.",
       icon: (
         <LayoutDashboard size={24} className="text-cosmic-accent" />
       )
     },
     {
-      title: "Compliance Tools",
-      description: "Built-in compliance features to meet regulatory requirements effortlessly.",
-      expandedDescription: "Stay compliant with financial regulations across multiple jurisdictions. Automated KYC/AML checks, transaction monitoring, and regulatory reporting. Generate audit trails and maintain documentation to meet compliance standards.",
+      title: "Team Collaboration",
+      description: "Seamless collaboration tools and project management for your development needs.",
+      expandedDescription: "Stay connected with your project through our collaborative approach. Real-time updates, milestone tracking, and transparent communication ensure you're always in the loop throughout the development process.",
       icon: (
-        <ListCheck size={24} className="text-cosmic-accent" />
+        <Users size={24} className="text-cosmic-accent" />
       )
     },
     {
-      title: "Multi-currency Support",
-      description: "Process payments in multiple currencies with real-time exchange rates.",
-      expandedDescription: "Accept and process payments in over 150 currencies with competitive exchange rates. Automatic currency conversion, hedging tools, and multi-currency accounting. Expand your business globally with seamless international payment processing.",
+      title: "Business Strategy",
+      description: "Strategic consulting to align your digital presence with business objectives.",
+      expandedDescription: "We don't just build websites - we create digital strategies. Our team helps you identify opportunities, optimize conversion funnels, and implement analytics to measure success and drive continuous improvement.",
       icon: (
-        <Star size={24} className="text-cosmic-accent" />
+        <BriefcaseBusiness size={24} className="text-cosmic-accent" />
       )
     },
     {
-      title: "API Integration",
-      description: "Powerful APIs for seamless integration with your existing financial systems.",
-      expandedDescription: "Connect with your ERP, accounting software, and banking systems through our comprehensive APIs. Real-time webhooks, detailed documentation, and SDKs for popular programming languages. Build custom integrations that fit your unique business needs.",
+      title: "Ongoing Support",
+      description: "Comprehensive maintenance and support services to keep your site running smoothly.",
+      expandedDescription: "Launch is just the beginning. We provide ongoing maintenance, security updates, performance monitoring, and feature enhancements. Our support ensures your digital assets remain secure, fast, and up-to-date.",
       icon: (
-        <BookOpen size={24} className="text-cosmic-accent" />
+        <Briefcase size={24} className="text-cosmic-accent" />
       )
     }
   ];
@@ -66,10 +66,10 @@ const Features = () => {
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tighter">
-            Everything your business needs
+            Everything your business needs to succeed online
           </h2>
           <p className="text-cosmic-muted text-lg">
-            Comprehensive fintech solutions to streamline your financial operations and drive growth
+            Comprehensive web development services to transform your digital presence and drive business growth
           </p>
         </div>
         
