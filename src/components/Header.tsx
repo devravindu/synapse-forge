@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
-import { Menu, X, Layout, LayoutDashboard, BriefcaseBusiness, Sun, Moon } from 'lucide-react';
+import { Menu, X, Layout, LayoutDashboard, BriefcaseBusiness, Sun, Moon, Briefcase } from 'lucide-react'; // Added Briefcase
 import { cn } from '@/lib/utils';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 import { Switch } from '@/components/ui/switch';
@@ -71,14 +71,14 @@ const Header = () => {
                 <Layout size={16} className="inline-block mr-1.5" /> Services
               </ToggleGroupItem>
               <ToggleGroupItem 
-                value="dashboard" 
+                value="portfolio"  // Changed value
                 className={cn(
                   "px-4 py-2 rounded-full transition-colors relative",
-                  activePage === 'dashboard' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  activePage === 'portfolio' ? 'text-accent-foreground bg-accent' : 'text-muted-foreground hover:text-foreground hover:bg-muted' // Changed activePage check
                 )}
-                onClick={handleNavClick('dashboard')}
+                onClick={handleNavClick('portfolio')} // Changed click handler
               >
-                <LayoutDashboard size={16} className="inline-block mr-1.5" /> Portfolio
+                <Briefcase size={16} className="inline-block mr-1.5" /> Our Work {/* Changed icon and text */}
               </ToggleGroupItem>
               <ToggleGroupItem 
                 value="pricing" 
@@ -108,13 +108,13 @@ const Header = () => {
                 <Layout size={16} className="inline-block mr-1.5" /> Services
               </a>
               <a 
-                href="#dashboard" 
+                href="#portfolio" // Changed href
                 className={`px-3 py-2 text-sm rounded-md transition-colors ${
-                  activePage === 'dashboard' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                  activePage === 'portfolio' ? 'bg-accent text-accent-foreground' : 'text-muted-foreground hover:text-foreground hover:bg-muted' // Changed activePage check
                 }`}
-                onClick={handleNavClick('dashboard')}
+                onClick={handleNavClick('portfolio')} // Changed click handler
               >
-                <LayoutDashboard size={16} className="inline-block mr-1.5" /> Portfolio
+                <Briefcase size={16} className="inline-block mr-1.5" /> Our Work {/* Changed icon and text */}
               </a>
               <a 
                 href="#pricing" 
@@ -155,7 +155,19 @@ const Header = () => {
             <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
           </div>
           <div className="rounded-2xl">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted">Contact Us</Button>
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted" asChild>
+              <a href="#contact-us" onClick={(e) => {
+                  // Prevent default if it's a hash link for smooth scroll, but allow default for external links
+                  if (String(e.currentTarget.getAttribute('href')).startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = e.currentTarget.getAttribute('href')?.substring(1);
+                    if (targetId) {
+                      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      setActivePage(targetId); // Optionally set active page state
+                    }
+                  }
+                }}>Contact Us</a>
+            </Button>
           </div>
         </div>
       </header>
