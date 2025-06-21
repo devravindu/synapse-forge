@@ -155,7 +155,19 @@ const Header = () => {
             <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
           </div>
           <div className="rounded-2xl">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted">Contact Us</Button>
+            <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted" asChild>
+              <a href="#contact-us" onClick={(e) => {
+                  // Prevent default if it's a hash link for smooth scroll, but allow default for external links
+                  if (String(e.currentTarget.getAttribute('href')).startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = e.currentTarget.getAttribute('href')?.substring(1);
+                    if (targetId) {
+                      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
+                      setActivePage(targetId); // Optionally set active page state
+                    }
+                  }
+                }}>Contact Us</a>
+            </Button>
           </div>
         </div>
       </header>

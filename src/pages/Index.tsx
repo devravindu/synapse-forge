@@ -6,6 +6,7 @@ import Features from '@/components/Features';
 import Portfolio from '@/components/Portfolio'; // Moved import
 import Testimonials from '@/components/Testimonials';
 import Pricing from '@/components/Pricing';
+import ContactUs from '@/components/ContactUs'; // Added import
 import Footer from '@/components/Footer';
 
 const Index = () => {
@@ -18,6 +19,7 @@ const Index = () => {
         <Portfolio /> {/* Moved Portfolio section */}
         <Testimonials />
         <Pricing />
+        <ContactUs /> {/* Added ContactUs section */}
       </main>
       <Footer />
     </div>
