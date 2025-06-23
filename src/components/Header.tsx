@@ -172,19 +172,26 @@ const Header = () => {
             <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
           </div>
           {/* Removed redundant rounded-2xl div */}
-          <Button className="px-6 min-h-[40px]" asChild> {/* Uses default primary variant now */}
-            <a href="#contact-us" onClick={(e) => {
-                // Prevent default if it's a hash link for smooth scroll, but allow default for external links
-                if (String(e.currentTarget.getAttribute('href')).startsWith('#')) {
-                    e.preventDefault();
-                    const targetId = e.currentTarget.getAttribute('href')?.substring(1);
-                    if (targetId) {
-                      document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' });
-                      setActivePage(targetId); // Optionally set active page state
-                    }
-                  }
-                }}>Contact Us</a>
-          </Button>
+            <Button className="px-6 min-h-[40px]" asChild>
+            <a
+            href="#contact-us"
+            onClick={(e) => {
+            const href = e.currentTarget.getAttribute('href');
+            if (href?.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+            setActivePage(targetId);
+            }
+            }
+            }}
+            >
+            Contact Us
+            </a>
+            </Button>
+
         </div> 
       </header> 
     </div>
