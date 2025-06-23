@@ -11,6 +11,19 @@ const Header = () => {
   const [activePage, setActivePage] = useState('features');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false); // Default to light mode
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50); // Change 50 to your desired scroll threshold
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Call handler once on mount to check initial scroll position
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
   
   useEffect(() => {
     // Apply the theme to the document when it changes
@@ -24,7 +37,7 @@ const Header = () => {
   }, [isDarkMode]);
   
   const handleNavClick = (page: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
+    e.preventDefault(); // Ensure this is active for same-page smooth scrolling
     setActivePage(page);
     const element = document.getElementById(page);
     if (element) {
@@ -42,11 +55,16 @@ const Header = () => {
   };
 
   return (
-    <div className="sticky top-0 z-50 pt-8 px-4">
-      <header className="w-full max-w-7xl mx-auto py-3 px-6 md:px-8 flex items-center justify-between">
-        <div className="p-3">
-          <Logo />
-        </div>
+    <div className="sticky top-0 z-50 pt-4 px-4 transition-all duration-300"> {/* Adjusted padding for scroll effect */}
+      <header
+        className={cn(
+          "w-full max-w-7xl mx-auto flex items-center justify-between transition-all duration-300 ease-in-out",
+          isScrolled
+            ? "py-3 px-6 md:px-8 bg-background/80 backdrop-blur-md shadow-lg rounded-full mt-0" // Styles when scrolled
+            : "py-3 px-6 md:px-8 bg-transparent shadow-none rounded-none mt-4" // Styles when at top (mt-4 from original pt-8 on outer, now pt-4 on outer and mt-4 on inner)
+        )}
+      >
+        <Logo />
         
         {/* Mobile menu button */}
         <button 
@@ -154,11 +172,11 @@ const Header = () => {
             />
             <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
           </div>
-          <div className="rounded-2xl">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground hover:bg-muted" asChild>
-              <a href="#contact-us" onClick={(e) => {
-                  // Prevent default if it's a hash link for smooth scroll, but allow default for external links
-                  if (String(e.currentTarget.getAttribute('href')).startsWith('#')) {
+          {/* Removed redundant rounded-2xl div */}
+          <Button className="px-6 min-h-[40px]" asChild> {/* Uses default primary variant now */}
+            <a href="#contact-us" onClick={(e) => {
+                // Prevent default if it's a hash link for smooth scroll, but allow default for external links
+                if (String(e.currentTarget.getAttribute('href')).startsWith('#')) {
                     e.preventDefault();
                     const targetId = e.currentTarget.getAttribute('href')?.substring(1);
                     if (targetId) {
