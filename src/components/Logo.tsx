@@ -1,13 +1,13 @@
 
 import React from 'react';
+import { Blocks } from 'lucide-react'; // Using Blocks icon
 
 const Logo = () => {
   return (
-    <div className="flex items-center gap-2">
-      <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center">
-        <div className="h-4 w-4 rounded-sm bg-primary-foreground"></div>
-      </div>
-    </div>
+    <a href="/" className="flex items-center gap-2 text-foreground hover:text-primary transition-colors duration-200 group">
+      <Blocks size={28} className="text-primary group-hover:animate-pulse-slow" /> {/* Increased size slightly */}
+      <span className="text-xl font-medium tracking-tight">Synapse Forge</span>
+    </a>
   );
 };
 
