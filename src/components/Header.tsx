@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
@@ -185,10 +184,9 @@ const Header = () => {
                     }
                   }
                 }}>Contact Us</a>
-            </Button>
-          </div>
-        </div>
-      </header>
+          </Button>
+        </div> 
+      </header> 
     </div>
   );
 };
