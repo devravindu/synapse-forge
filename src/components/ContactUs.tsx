@@ -302,7 +302,7 @@ const ContactUs = () => {
         </div>
 
         {/* Form container */}
-        <div className="p-8 md:p-10 rounded-xl border border-border bg-background/80 backdrop-blur-sm shadow-lg">
+        <div className="p-8 md:p-10 rounded-xl border border-border bg-background/80 backdrop-blur-sm shadow-lg" netlify>
           {/* Progress Indicator (Optional but good for UX) */}
           <div className="mb-8">
             <div className="flex justify-between mb-1">
