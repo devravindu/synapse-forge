@@ -25,6 +25,11 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				'bg-primary': 'var(--bg-primary)',
+				'bg-secondary': 'var(--bg-secondary)',
+				'accent-primary': 'var(--accent-primary)',
+				'text-primary': 'var(--text-primary)',
+				'text-muted': 'var(--text-muted)',
 				cosmic: {
 					dark: '#404040', /* Medium grey for light mode */
 					darker: '#303030', /* Darker grey for light mode */

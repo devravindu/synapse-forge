@@ -7,33 +7,39 @@
 
 @layer base {
   :root {
-    --background: 0 0% 8%; /* Dark charcoal */
-    --foreground: 0 0% 95%; /* Light grey/white */
+    --bg-primary: #040814;
+    --bg-secondary: #0A0E17;
+    --accent-primary: #0052FF;
+    --text-primary: #FFFFFF;
+    --text-muted: #8B949E;
 
-    --card: 0 0% 12%; /* Slightly lighter charcoal */
-    --card-foreground: 0 0% 95%;
+    --background: 225 67% 5%; /* #040814 */
+    --foreground: 0 0% 100%; /* #FFFFFF */
 
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
+    --card: 222 39% 7%; /* #0A0E17 */
+    --card-foreground: 0 0% 100%;
 
-    --primary: 0 0% 85%; /* Light grey */
-    --primary-foreground: 0 0% 15%; /* Dark charcoal */
+    --popover: 222 39% 7%;
+    --popover-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%; /* Medium charcoal */
-    --secondary-foreground: 0 0% 95%;
+    --primary: 221 100% 50%; /* #0052FF */
+    --primary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 22%; /* Lighter charcoal */
-    --muted-foreground: 0 0% 70%; /* Medium grey */
+    --secondary: 222 39% 7%;
+    --secondary-foreground: 0 0% 100%;
 
-    --accent: 0 0% 85%; /* Light grey accent */
-    --accent-foreground: 0 0% 15%;
+    --muted: 222 39% 7%;
+    --muted-foreground: 213 13% 58%; /* #8B949E */
+
+    --accent: 221 100% 50%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 0 0% 22%; /* Medium charcoal border */
-    --input: 0 0% 22%;
-    --ring: 0 0% 85%; /* Light grey ring */
+    --border: 215 25% 15%;
+    --input: 215 25% 15%;
+    --ring: 221 100% 50%;
 
     --radius: 0.5rem;
   }
@@ -198,5 +204,13 @@
   
   .column-highlight {
     @apply bg-accent/20 transition-all duration-300;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
   }
 }
