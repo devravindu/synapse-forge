@@ -200,49 +200,51 @@ const PlanCard = ({ plan }: { plan: typeof pricingData["Web Hosting"][0] }) => {
   return (
     <div
       className={cn(
-        "relative p-6 rounded-xl border flex flex-col h-full transition-all duration-300",
+        "relative p-6 rounded-xl flex flex-col h-full transition-all duration-300 glass-panel",
         plan.isPopular
-          ? "border-primary/50 bg-card shadow-lg shadow-primary/10 scale-[1.02] md:scale-105 z-10"
-          : "border-border bg-card/50 hover:bg-card hover:border-primary/20"
+          ? "border-accent-primary bg-bg-secondary shadow-[0_0_30px_-5px_rgba(0,82,255,0.4)] scale-[1.02] md:scale-105 z-10"
+          : "border-white/10 bg-bg-secondary/50 hover:bg-bg-secondary hover:border-white/20"
       )}
     >
       {plan.isPopular && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
-          Most Popular
+        <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-primary text-text-primary text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+          Recommended
         </div>
       )}
 
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-foreground mb-4">{plan.name}</h3>
+      <div className="mb-6 flex-grow-0">
+        <h3 className="text-xl font-bold text-text-primary mb-4">{plan.name}</h3>
         <div className="flex items-baseline gap-1">
-          <span className="text-4xl font-bold tracking-tighter text-foreground">
+          <span className="text-4xl font-bold tracking-tighter text-text-primary">
             {plan.price}
           </span>
-          <span className="text-sm text-muted-foreground">{plan.period}</span>
+          <span className="text-sm text-text-muted">{plan.period}</span>
         </div>
       </div>
 
       <div className="space-y-4 mb-8 flex-grow">
         {plan.features.map((feature, i) => (
           <div key={i} className="flex items-start gap-3">
-            <div className="mt-1 h-4 w-4 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+            <div className="mt-1 h-4 w-4 rounded-full bg-accent-primary/20 flex items-center justify-center text-accent-primary flex-shrink-0">
               <Check size={10} strokeWidth={3} />
             </div>
-            <span className="text-sm text-muted-foreground">{feature}</span>
+            <span className="text-sm text-text-muted">{feature}</span>
           </div>
         ))}
       </div>
 
-      <Button
-        className={cn(
-          "w-full font-medium transition-all",
-          plan.isPopular
-            ? "bg-primary text-primary-foreground hover:bg-primary/90 shadow-md"
-            : "bg-transparent border border-primary/20 hover:bg-primary/5 text-foreground"
-        )}
-      >
-        Choose Plan
-      </Button>
+      <div className="mt-auto">
+        <Button
+          className={cn(
+            "w-full font-medium transition-all",
+            plan.isPopular
+              ? "bg-accent-primary text-text-primary hover:scale-105 shadow-[0_0_24px_-6px_rgba(0,82,255,0.65)]"
+              : "bg-transparent border border-white/20 hover:bg-white/5 text-text-primary"
+          )}
+        >
+          Choose Plan
+        </Button>
+      </div>
     </div>
   );
 };
@@ -251,25 +253,25 @@ const HostingPricing = () => {
   const tabs = Object.keys(pricingData);
 
   return (
-    <section className="w-full py-20 px-4 md:px-6 bg-background">
+    <section className="w-full py-20 px-4 md:px-6 bg-bg-primary">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-foreground">
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tighter text-text-primary">
             Choose Your Web Hosting Plan
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-text-muted text-lg">
             Powerful hosting solutions for every need.
           </p>
         </div>
 
         <Tabs defaultValue={tabs[0]} className="w-full">
           <div className="flex justify-center mb-10 overflow-x-auto pb-2">
-            <TabsList className="h-auto p-1 bg-muted/50 rounded-full border border-border/50 backdrop-blur-sm">
+            <TabsList className="h-auto p-1 bg-bg-secondary/50 rounded-full border border-white/10 backdrop-blur-sm">
               {tabs.map((tab) => (
                 <TabsTrigger
                   key={tab}
                   value={tab}
-                  className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm transition-all"
+                  className="rounded-full px-6 py-2.5 text-sm md:text-base data-[state=active]:bg-bg-primary data-[state=active]:text-text-primary data-[state=active]:shadow-sm transition-all text-text-muted"
                 >
                   {tab}
                 </TabsTrigger>
@@ -279,7 +281,7 @@ const HostingPricing = () => {
 
           {tabs.map((tab) => (
             <TabsContent key={tab} value={tab} className="mt-0 animate-in fade-in slide-in-from-bottom-4 duration-500">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-start">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch">
                 {pricingData[tab as keyof typeof pricingData].map((plan, index) => (
                   <PlanCard key={index} plan={plan} />
                 ))}

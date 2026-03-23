@@ -62,50 +62,55 @@ const Features = () => {
   };
   
   return (
-    <section id="features" className="w-full py-12 md:py-16 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="features" className="relative w-full py-12 md:py-16 px-6 md:px-12 overflow-hidden">
+      {/* Ambient radial gradients */}
+      <div className="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-accent-primary/20 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent-primary/10 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto space-y-12 z-10">
         <div className="text-center space-y-3 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter">
+          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-text-primary">
             Everything your business needs to succeed online
           </h2>
-          <p className="text-cosmic-muted text-lg">
+          <p className="text-text-muted text-lg">
             Comprehensive web development services to transform your digital presence and drive business growth
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
           {features.map((feature, index) => (
-            <Collapsible
-              key={index}
-              open={openFeature === index}
-              onOpenChange={() => toggleFeature(index)}
-              className={`rounded-xl border ${openFeature === index ? 'border-cosmic-light/40' : 'border-cosmic-light/20'} cosmic-gradient transition-all duration-300`}
-            >
-              <CollapsibleTrigger className="w-full text-left p-6 flex flex-col">
-                <div className="flex justify-between items-start">
-                  <div className="h-16 w-16 rounded-full bg-cosmic-light/10 flex items-center justify-center mb-6">
-                    {feature.icon}
+            <div key={index} className="glass-panel transition-all duration-300 hover:scale-[1.02]">
+              <Collapsible
+                open={openFeature === index}
+                onOpenChange={() => toggleFeature(index)}
+                className={`w-full h-full`}
+              >
+                <CollapsibleTrigger className="w-full text-left p-6 flex flex-col">
+                  <div className="flex justify-between items-start w-full">
+                    <div className="h-16 w-16 rounded-full bg-accent-primary/10 flex items-center justify-center mb-6">
+                      {feature.icon}
+                    </div>
+                    <ChevronDown
+                      className={`h-5 w-5 text-text-muted transition-transform duration-200 ${
+                        openFeature === index ? 'rotate-180' : ''
+                      }`}
+                    />
                   </div>
-                  <ChevronDown
-                    className={`h-5 w-5 text-cosmic-muted transition-transform duration-200 ${
-                      openFeature === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </div>
-                <h3 className="text-xl font-medium tracking-tighter mb-3">{feature.title}</h3>
-                <p className="text-cosmic-muted">{feature.description}</p>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="px-6 pb-6 pt-2">
-                <div className="pt-3 border-t border-cosmic-light/10">
-                  <p className="text-cosmic-muted">{feature.expandedDescription}</p>
-                  <div className="mt-4 flex justify-end">
-                    <button className="text-cosmic-accent hover:text-cosmic-accent/80 text-sm font-medium">
-                      Learn more →
-                    </button>
+                  <h3 className="text-xl font-medium tracking-tighter mb-3 text-text-primary">{feature.title}</h3>
+                  <p className="text-text-muted">{feature.description}</p>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="px-6 pb-6 pt-2">
+                  <div className="pt-3 border-t border-white/10">
+                    <p className="text-text-muted">{feature.expandedDescription}</p>
+                    <div className="mt-4 flex justify-end">
+                      <button className="text-accent-primary hover:text-accent-primary/80 text-sm font-medium transition-colors">
+                        Learn more →
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </CollapsibleContent>
-            </Collapsible>
+                </CollapsibleContent>
+              </Collapsible>
+            </div>
           ))}
         </div>
       </div>
