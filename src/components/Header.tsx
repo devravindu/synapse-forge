@@ -219,7 +219,7 @@ const Header = () => {
             />
             <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
           </div>
-          <Button className="px-6 min-h-[40px]" asChild>
+          <Button size="default" className="px-6" asChild>
             <a
               href="#contact-us"
               onClick={(e) => {

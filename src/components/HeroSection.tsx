@@ -39,14 +39,14 @@ const HeroSection = () => {
         </h1>
         
         <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto text-balance">
-          DevRavi Solutions specializes in building exceptional websites and web applications. We transform your vision into powerful digital solutions that drive growth and engage your audience.
+          Devravi Solutions specializes in building exceptional websites and web applications. We transform your vision into powerful digital solutions that drive growth and engage your audience.
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6 items-center">
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]" asChild>
+          <Button size="lg" className="min-w-[190px]" asChild>
             <a href="#contact-us">Start your project</a>
           </Button>
-          <Button variant="outline" className="border-border text-foreground hover:bg-accent hover:text-accent-foreground text-base h-12 px-8 transition-all duration-200 min-h-[48px]" asChild>
+          <Button variant="outline" size="lg" className="min-w-[190px]" asChild>
             <a href="#portfolio">View our work</a>
           </Button>
         </div>

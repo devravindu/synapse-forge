@@ -7,41 +7,46 @@
 
 @layer base {
   :root {
-    --bg-primary: #040814;
-    --bg-secondary: #0A0E17;
-    --accent-primary: #0052FF;
-    --text-primary: #FFFFFF;
-    --text-muted: #8B949E;
+    --bg-primary: #04070f;
+    --bg-secondary: #0b1220;
+    --bg-elevated: #101a2e;
+    --bg-glass: rgba(10, 20, 36, 0.68);
+    --accent-primary: #2467ff;
+    --accent-cyan: #6fd8ff;
+    --text-primary: #f5f9ff;
+    --text-secondary: #b5c5df;
+    --text-muted: #8da0be;
+    --text-tertiary: #7082a3;
 
-    --background: 225 67% 5%; /* #040814 approx */
-    --foreground: 0 0% 100%; /* #FFFFFF */
+    --background: 227 58% 4%;
+    --foreground: 213 100% 98%;
 
-    --card: 222 39% 7%; /* #0A0E17 approx */
+    --card: 222 42% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 222 39% 7%;
+    --popover: 222 42% 10%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 221 100% 50%; /* #0052FF approx */
+    --primary: 221 100% 57%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 222 39% 7%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 221 37% 14%;
+    --secondary-foreground: 213 100% 98%;
 
-    --muted: 222 39% 7%;
-    --muted-foreground: 213 13% 58%; /* #8B949E */
+    --muted: 221 34% 12%;
+    --muted-foreground: 216 31% 72%;
 
-    --accent: 221 100% 50%;
+    --accent: 221 100% 57%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 25% 15%; /* Deep dark border */
-    --input: 215 25% 15%;
-    --ring: 221 100% 50%;
+    --border: 218 35% 22%;
+    --input: 218 35% 20%;
+    --ring: 194 100% 72%;
 
-    --radius: 0.5rem;
+    --radius: 0.8rem;
   }
 
   .light-mode {
@@ -78,6 +83,9 @@
   body {
     @apply bg-background font-inter text-foreground antialiased;
     letter-spacing: -0.025em;
+    background-image:
+      radial-gradient(circle at 12% -10%, rgba(36, 103, 255, 0.18) 0%, transparent 34%),
+      radial-gradient(circle at 88% 8%, rgba(111, 216, 255, 0.1) 0%, transparent 28%);
   }
   
   ::selection {
@@ -130,7 +138,7 @@
   }
   
   .cosmic-glass {
-    @apply backdrop-blur-sm bg-card border border-white/10 shadow-[0_0_15px_rgba(255,255,255,0.1)];
+    @apply backdrop-blur-sm bg-card/70 border border-white/10 shadow-[0_10px_40px_-24px_rgba(111,216,255,0.35)];
   }
 
   .light-mode .cosmic-glass {
@@ -138,7 +146,7 @@
   }
   
   .cosmic-card {
-    @apply bg-card border border-border backdrop-blur-sm;
+    @apply bg-card/85 border border-border backdrop-blur-sm;
   }
   
   .nav-pill {
@@ -207,10 +215,48 @@
   }
 
   .glass-panel {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(157, 181, 255, 0.18);
     border-radius: 1rem;
+    box-shadow:
+      0 20px 60px -48px rgba(59, 130, 246, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply relative w-full px-6 md:px-10 lg:px-12 py-16 md:py-20;
+  }
+
+  .section-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-5xl font-semibold tracking-tight text-text-primary;
+  }
+
+  .section-subheading {
+    @apply text-base md:text-lg text-text-secondary max-w-3xl;
+  }
+
+  .premium-surface {
+    @apply rounded-2xl border border-white/10 bg-[#0b1526]/90 shadow-[0_22px_60px_-42px_rgba(37,99,235,0.85)];
+  }
+
+  .premium-glass {
+    @apply border border-blue-200/15 bg-[rgba(10,20,36,0.68)] backdrop-blur-xl shadow-[0_16px_48px_-36px_rgba(111,216,255,0.55),inset_0_1px_0_rgba(255,255,255,0.12)];
+  }
+
+  .premium-card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-blue-300/40 hover:shadow-[0_24px_60px_-40px_rgba(37,99,235,0.85)];
+  }
+
+  .divider-fade {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.45), transparent);
   }
 }

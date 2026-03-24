@@ -164,7 +164,7 @@ const ContactUs = () => {
             )}
           </div>
         );
-      case 3:
+      case 3: {
         const budgetOptions = [
           { value: "<2500", label: "< $2,500" },
           { value: "2500-5000", label: "$2,500 - $5,000" },
@@ -193,6 +193,7 @@ const ContactUs = () => {
             <p className="text-xs text-muted-foreground">This helps us tailor our proposal to your needs.</p>
           </div>
         );
+      }
       case 4:
         return (
           <div className="space-y-6">
@@ -321,11 +322,11 @@ const ContactUs = () => {
           {/* Navigation Buttons */}
           <div className={cn("mt-8 flex", currentStep > 1 ? "justify-between" : "justify-end")}>
             {currentStep > 1 && (
-              <Button variant="outline" onClick={handlePrevious} className="border-border text-foreground hover:bg-accent hover:text-accent-foreground">
+              <Button variant="outline" onClick={handlePrevious}>
                 Previous
               </Button>
             )}
-            <Button onClick={handleNext} className="bg-primary text-primary-foreground hover:bg-primary/90">
+            <Button onClick={handleNext}>
               {currentStep === totalSteps ? 'Submit Inquiry' : 'Next Step'}
             </Button>
           </div>
