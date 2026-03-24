@@ -1,81 +1,112 @@
 import React from 'react';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowUpRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const projects = [
   {
-    title: "Project Alpha",
-    excerpt: "A cutting-edge web application developed for a leading tech startup.",
+    title: "B2B SaaS Platform",
+    excerpt: "End-to-end product site and app shell that increased qualified demo requests by 42%.",
     image: "/project-placeholder.svg",
+    category: "SaaS Product",
+    outcome: "Conversion +42%",
     link: "#",
   },
   {
-    title: "Project Beta",
-    excerpt: "An e-commerce platform that boosted client sales by 150%.",
+    title: "Commerce Experience",
+    excerpt: "Modern storefront architecture focused on speed, checkout reliability, and retention flows.",
     image: "/project-placeholder.svg",
+    category: "E-commerce",
+    outcome: "AOV +18%",
     link: "#",
   },
   {
-    title: "Project Gamma",
-    excerpt: "A sleek and modern marketing website for a creative agency.",
+    title: "Operations Dashboard",
+    excerpt: "Role-based dashboard with actionable analytics that reduced manual reporting overhead.",
     image: "/project-placeholder.svg",
+    category: "Data Platform",
+    outcome: "Ops time -35%",
     link: "#",
   },
   {
-    title: "Project Delta",
-    excerpt: "A complex data visualization tool for a financial services company.",
+    title: "Fintech Landing Suite",
+    excerpt: "Premium acquisition pages and onboarding flows optimized for trust and clarity.",
     image: "/project-placeholder.svg",
+    category: "Financial Services",
+    outcome: "Lead quality +27%",
     link: "#",
   },
   {
-    title: "Project Epsilon",
-    excerpt: "A community portal for a non-profit organization.",
+    title: "Service Marketplace",
+    excerpt: "Search and booking interface redesign with clearer information hierarchy and mobile UX.",
     image: "/project-placeholder.svg",
+    category: "Marketplace",
+    outcome: "Bookings +24%",
+    link: "#",
+  },
+  {
+    title: "Agency Rebrand Website",
+    excerpt: "Complete visual refresh and CMS rebuild for faster publishing and stronger positioning.",
+    image: "/project-placeholder.svg",
+    category: "Brand & Web",
+    outcome: "Bounce rate -31%",
     link: "#",
   },
 ];
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="w-full py-20 px-6 md:px-12 bg-bg-primary">
-      <div className="max-w-7xl mx-auto space-y-16">
-        <div className="text-center space-y-4 max-w-3xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tighter text-text-primary">
-            Our Recent Work
-          </h2>
-          <p className="text-text-muted text-lg">
-            Discover a selection of projects that showcase our expertise and creativity.
+    <section id="portfolio" className="section-shell">
+      <div className="section-container space-y-14">
+        <div className="mx-auto max-w-3xl text-center space-y-4">
+          <span className="inline-flex items-center rounded-full border border-blue-200/20 bg-blue-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-accent-cyan">
+            Selected Projects
+          </span>
+          <h2 className="section-heading">Work that demonstrates measurable outcomes</h2>
+          <p className="section-subheading mx-auto">
+            A curated view of recent Devravi Solutions engagements across SaaS, commerce, and operations-focused platforms.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-xl border border-white/10 bg-bg-secondary aspect-video">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-6">
-                <h3 className="text-xl font-medium tracking-tighter text-text-primary translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">{project.title}</h3>
-                <p className="text-sm text-text-muted mt-2 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 delay-75">{project.excerpt}</p>
-                <div className="mt-4 translate-y-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100 delay-100">
-                  <Button variant="outline" className="w-full border-white/20 text-text-primary hover:bg-accent-primary hover:border-accent-primary">
-                    View Project
-                  </Button>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project) => (
+            <article key={project.title} className="group premium-surface premium-card-hover overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-black/30">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#050914] via-[#050914]/20 to-transparent" />
+                <div className="absolute left-4 top-4 inline-flex items-center rounded-full border border-white/15 bg-[#0b1526]/85 px-2.5 py-1 text-[11px] font-medium text-text-secondary">
+                  {project.category}
+                </div>
+                <div className="absolute bottom-4 left-4 inline-flex items-center rounded-full border border-cyan-200/25 bg-cyan-300/10 px-2.5 py-1 text-[11px] font-semibold text-accent-cyan">
+                  {project.outcome}
                 </div>
               </div>
-            </div>
+
+              <div className="space-y-5 p-6">
+                <div className="space-y-3">
+                  <h3 className="text-xl font-semibold tracking-tight text-text-primary">{project.title}</h3>
+                  <p className="text-sm leading-relaxed text-text-secondary">{project.excerpt}</p>
+                </div>
+
+                <Button asChild variant="outline" className="w-full justify-between">
+                  <a href={project.link}>
+                    View case study
+                    <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </article>
           ))}
         </div>
 
         <div className="text-center">
-            <Button variant="outline" className="border-white/20 text-text-primary hover:bg-accent-primary hover:border-accent-primary text-base h-12 px-8 transition-all duration-200 min-h-[48px]">
-                Explore More Projects
-            </Button>
+          <Button variant="secondary" size="lg" className="min-w-[220px]">
+            Explore full portfolio
+          </Button>
         </div>
-
       </div>
     </section>
   );
