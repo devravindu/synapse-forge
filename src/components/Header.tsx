@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import Logo from './Logo';
-import { Menu, X, Layout, BriefcaseBusiness, Sun, Moon, Briefcase, Server } from 'lucide-react';
+import { Menu, X, Layout, BriefcaseBusiness, Briefcase, Server } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
-import { Switch } from '@/components/ui/switch';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const [activePage, setActivePage] = useState('features');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const location = useLocation();
@@ -27,16 +25,6 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove('light-mode');
-      document.documentElement.classList.add('dark-mode');
-    } else {
-      document.documentElement.classList.remove('dark-mode');
-      document.documentElement.classList.add('light-mode');
-    }
-  }, [isDarkMode]);
-
   // Handle setting active page based on URL and location state
   useEffect(() => {
     if (location.pathname === '/hosting') {
@@ -81,10 +69,6 @@ const Header = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
-  };
-
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
   };
 
   return (
@@ -192,34 +176,12 @@ const Header = () => {
               >
                 <Server size={16} className="inline-block mr-1.5" /> Hosting
               </a>
-              
-              <div className="flex items-center justify-between px-3 py-2">
-                <span className="text-sm text-muted-foreground">Theme</span>
-                <div className="flex items-center gap-2">
-                  <Moon size={16} className={`${isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-                  <Switch 
-                    checked={!isDarkMode} 
-                    onCheckedChange={toggleTheme} 
-                    className="data-[state=checked]:bg-primary"
-                  />
-                  <Sun size={16} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-                </div>
-              </div>
             </div>
           </div>
         )}
         
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-2 rounded-full px-3 py-2">
-            <Moon size={18} className={`${isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-            <Switch 
-              checked={!isDarkMode} 
-              onCheckedChange={toggleTheme} 
-              className="data-[state=checked]:bg-primary"
-            />
-            <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-          </div>
-          <Button className="px-6 min-h-[40px]" asChild>
+          <Button size="default" className="px-6" asChild>
             <a
               href="#contact-us"
               onClick={(e) => {
