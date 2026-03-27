@@ -181,15 +181,6 @@ const Header = () => {
         )}
         
         <div className="hidden md:flex items-center gap-4">
-          <div className="flex items-center gap-2 rounded-full px-3 py-2">
-            <Moon size={18} className={`${isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-            <Switch 
-              checked={!isDarkMode} 
-              onCheckedChange={toggleTheme} 
-              className="data-[state=checked]:bg-primary"
-            />
-            <Sun size={18} className={`${!isDarkMode ? 'text-primary' : 'text-muted-foreground'}`} />
-          </div>
           <Button size="default" className="px-6" asChild>
             <a
               href="#contact-us"
