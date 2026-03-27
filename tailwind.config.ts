@@ -27,9 +27,14 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				'bg-primary': 'var(--bg-primary)',
 				'bg-secondary': 'var(--bg-secondary)',
+				'bg-elevated': 'var(--bg-elevated)',
+				'bg-glass': 'var(--bg-glass)',
 				'accent-primary': 'var(--accent-primary)',
+				'accent-cyan': 'var(--accent-cyan)',
 				'text-primary': 'var(--text-primary)',
+				'text-secondary': 'var(--text-secondary)',
 				'text-muted': 'var(--text-muted)',
+				'text-tertiary': 'var(--text-tertiary)',
 				cosmic: {
 					dark: '#404040', /* Medium grey for light mode */
 					darker: '#303030', /* Darker grey for light mode */

@@ -4,19 +4,19 @@ import React from 'react';
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "DevRavi Solutions transformed our online presence completely. Our new website increased conversions by 300% and we couldn't be happier with the results.",
+      quote: "Devravi Solutions transformed our online presence completely. Our new website increased conversions by 300% and we couldn't be happier with the results.",
       author: "Sarah Johnson",
       position: "CEO at TechStartup",
       avatar: "bg-cosmic-light/30"
     },
     {
-      quote: "The team at DevRavi Solutions delivered beyond our expectations. Their attention to detail and technical expertise made our complex web application a reality.",
+      quote: "The team at Devravi Solutions delivered beyond our expectations. Their attention to detail and technical expertise made our complex web application a reality.",
       author: "Michael Chen",
       position: "CTO at InnovateNow",
       avatar: "bg-cosmic-light/20"
     },
     {
-      quote: "Working with DevRavi Solutions was seamless. They understood our vision perfectly and delivered a stunning e-commerce platform that our customers love.",
+      quote: "Working with Devravi Solutions was seamless. They understood our vision perfectly and delivered a stunning e-commerce platform that our customers love.",
       author: "Leila Rodriguez",
       position: "Founder at StyleHub",
       avatar: "bg-cosmic-light/40"
